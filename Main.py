@@ -1,10 +1,21 @@
 from pathlib import Path
 import shutil
 
-downloads_folder = Path.home() / 'Downloads'
-destination_folder = Path("D:/AI Receptionist Photos")
+# === CONFIG ===
+#SOURCE_FOLDER = str(Path.home() / 'Downloads')
+#DEST_FOLDER = str(Path.home() / 'Pictures' / 'ChatGPT Images')
 
-destination_folder.mkdir(exist_ok=True)
+SOURCE_FOLDER = str(Path.home() / 'Downloads')
+DEST_FOLDER = r"D:\AI Receptionist Photos"
+
+downloads_folder = Path(SOURCE_FOLDER)
+destination_folder = Path(DEST_FOLDER)
+
+if not downloads_folder.exists():
+    print(f'Source folder does not exist {downloads_folder}')
+    exit()
+
+destination_folder.mkdir(parents=True, exist_ok=True)
 
 image_extentions = ['.png', '.jpg', '.jpeg', '.webp']
 
