@@ -2,11 +2,8 @@ from pathlib import Path
 import shutil
 
 # === CONFIG ===
-#SOURCE_FOLDER = str(Path.home() / 'Downloads')
-#DEST_FOLDER = str(Path.home() / 'Pictures' / 'ChatGPT Images')
-
 SOURCE_FOLDER = str(Path.home() / 'Downloads')
-DEST_FOLDER = r"D:\AI Receptionist Photos"
+DEST_FOLDER = str(Path.home() / 'Pictures' / 'ChatGPT Images')
 
 downloads_folder = Path(SOURCE_FOLDER)
 destination_folder = Path(DEST_FOLDER)
