@@ -14,6 +14,13 @@ for file in downloads_folder.iterdir():
 
 
         new_path = destination_folder / file.name
+        counter = 1
+
+        while new_path.exists():
+            new_name = f"{file.stem}_{counter}{file.suffix}"
+            new_path = destination_folder / new_name
+            counter += 1
+
         print(new_path)
 
         shutil.move(file, new_path)
